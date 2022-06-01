@@ -64,3 +64,9 @@ function artWork(work){
 card.addEventListener("click", e => {
     document.querySelector(".row").style.display = "none"    
 })
+
+// Lori added the lines 69 - 72
+const btnSub = document.querySelector('button#btn-subscribe');
+const clickSub = document.addEventListener("click", function(btnSub){
+    alert("If you need more beautiful, historical works in your life, please consider subscribing for more.  Thank you!"); 
+});
