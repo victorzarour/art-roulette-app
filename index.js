@@ -37,6 +37,7 @@ function artWork(work){
     const workCulture = document.createElement("p")
     const workPeriod = document.createElement("p")
     const workURL = document.createElement("p")
+    const seeMore = document.createElement("p")
 
     image.className = "work-image"
     workDiv.className = "workDiv"
@@ -47,6 +48,7 @@ function artWork(work){
     workCulture.className = "workInfo"
     workPeriod.className = "workInfo"
     workURL.className = "workInfo"
+    seeMore.className = "workInfo"
 
     image.src = work.primaryImageSmall
     workBasics.innerText = `${work.title}, (${work.objectDate})`
@@ -56,9 +58,10 @@ function artWork(work){
     workCulture.innerText = `Culture: ${work.culture}`
     workPeriod.innerText = `Period: ${work.period}`
     workURL.innerText = `Learn more: ${work.objectURL}`
+    seeMore.innerText = 'Like what you see? Click on the button below to discover more works by the same artist!'
     
     pageDiv.append(workDiv)
-    workDiv.append(image, workBasics, workArtist, workType, workAcquired, workCulture, workPeriod, workURL)
+    workDiv.append(image, workBasics, workArtist, workType, workAcquired, workCulture, workPeriod, workURL, seeMore)
 }
 
 card.addEventListener("click", e => {

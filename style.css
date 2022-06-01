@@ -20,35 +20,22 @@
 	align-items: center;
 }
 
-.logo{
-	width: 50px;
-	cursor: pointer;
-}
-
-.menu-icon{
-	width: 30px;
-	cursor: pointer;
-	margin-left: 40px;
-}
-
 nav{
 	flex: 1;
 	text-align: right;
 }
 
-nav ul li{
-	list-style: none;
-	display: inline-block;
-	margin-left: 60px;
-
-}
-
-nav ul li a{
+nav ul li a, nav ul li i{
 	text-decoration: none;
 	color: #fff;
 	font-size: 13px;
 	display: none;
-	margin-right: 30px;
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+nav ul li a{
+	margin-right: 30px
 }
 
 .row{
@@ -174,5 +161,5 @@ h5{
 	margin-top: 30px;
 	margin-bottom: 30px;
 	text-align: left;
-	line-height: 30px;
+	line-height: 25px;
 }
