@@ -1,4 +1,6 @@
 const card = document.querySelector(".card")
+const pageDiv = document.querySelector(".container")
+
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
     }
@@ -12,7 +14,6 @@ document.addEventListener("DOMContentLoaded", e =>{
 function highlightIteration(highlights){
     let randomNumber = Math.floor(Math.random() * highlights.length);
     let randomWork = highlights[randomNumber]  
-    console.log(randomWork)
 
     card.addEventListener("click", e =>{
         fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${randomWork}`)
@@ -24,8 +25,6 @@ function highlightIteration(highlights){
 function artWork(work){
 
     document.querySelector("li a").style.display = "inline-block"
-
-    const pageDiv = document.querySelector(".container")
 
     const workDiv = document.createElement("div")
     const image = document.createElement("img")
@@ -58,7 +57,7 @@ function artWork(work){
     workCulture.innerText = `Culture: ${work.culture}`
     workPeriod.innerText = `Period: ${work.period}`
     workURL.innerText = `Learn more: ${work.objectURL}`
-    seeMore.innerText = 'Like what you see? Click on the button below to discover more works by the same artist!'
+    seeMore.innerText = "Like what you see? Click on the search button on the Home page and search for the artist's name to discover their work!"
     
     pageDiv.append(workDiv)
     workDiv.append(image, workBasics, workArtist, workType, workAcquired, workCulture, workPeriod, workURL, seeMore)
@@ -66,4 +65,67 @@ function artWork(work){
 
 card.addEventListener("click", e => {
     document.querySelector(".row").style.display = "none"    
+})
+
+const searchButton = document.querySelector(".buttontwo")
+const container = document.querySelector(".container")
+
+searchButton.addEventListener("click", e => {
+    document.querySelector(".row").style.display = "none"  
+    document.querySelector("li a").style.display = "inline-block"  
+})
+
+searchButton.addEventListener("click", e => {
+    const searchDiv = document.createElement("div")
+    const searchMessage = document.createElement("p")
+    const searchForm = document.createElement("form")
+    const searchInput = document.createElement("input")
+    const submitButton = document.createElement("input")
+
+    searchMessage.innerText = "If you already have something in mind and would like to search the MET Collection for it, you can also do so in the search bar below!"
+
+    searchDiv.className = "searchDiv"
+    searchInput.setAttribute("type", "text")
+    searchInput.setAttribute("placeholder", "Search...")
+    searchInput.setAttribute("name", "search")
+    submitButton.setAttribute("type", "submit")
+    submitButton.setAttribute("value", "Submit")
+
+    pageDiv.append(searchDiv)
+    searchDiv.append(searchMessage, searchForm)
+    searchForm.append(searchInput, submitButton)
+
+    searchForm.addEventListener("submit", e =>{
+        e.preventDefault() 
+        const searchValue = searchForm.search.value
+    
+        fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${searchValue}`)
+          .then (res => res.json())
+          .then (work => titleSearch(work.objectIDs))
+      })
+      
+      function titleSearch(searchlist){
+        const searchlistSpliced = searchlist.splice(0,10)
+        searchlistSpliced.forEach(searchquery => {
+          fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${searchquery}`)
+          .then (res => res.json())
+          .then (object => turnURLIntoArray(object.objectURL)) 
+        }) 
+      }
+
+      function turnURLIntoArray(URLs){
+          const urlArray = []
+          urlArray.push(URLs)
+          appendWorks(urlArray)
+      }
+
+      function appendWorks(urlList){
+        urlList.forEach(url => {
+            const urlParagraph = document.createElement("p")
+            urlParagraph.innerText = url
+
+
+            searchDiv.append(urlParagraph)
+        })
+      }
 })

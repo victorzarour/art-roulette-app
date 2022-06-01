@@ -163,3 +163,48 @@ h5{
 	text-align: left;
 	line-height: 25px;
 }
+
+input[type=text] {
+	width: 130px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  input[type=text]:focus {
+	width: 100%;
+  }
+
+.input{
+	display: none;
+}
+
+.searchDiv{
+	background-color: #000;
+	color: #fff;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+	text-align: center;
+	line-height: 20px;
+	padding: 30px;
+	
+}
+
+.searchDiv p{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+input[type=text] {
+	width: 130px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	margin: 20px auto
+}
+  
+input[type=text]:focus {
+width: 40%;
+}
