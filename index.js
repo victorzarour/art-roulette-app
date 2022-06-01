@@ -1,10 +1,6 @@
 const card = document.querySelector(".card")
 const pageDiv = document.querySelector(".container")
 
-function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-    }
-
 document.addEventListener("DOMContentLoaded", e =>{
     fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&q=painting")
     .then (res => res.json())
@@ -18,9 +14,31 @@ function highlightIteration(highlights){
     card.addEventListener("click", e =>{
         fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${randomWork}`)
         .then (res => res.json())
-        .then (work => artWork(work))
+        .then (work => lengthImage(work))
     })
 }
+
+function lengthImage(work){
+    if (work.primaryImage.length >= 10) {
+        artWork(work)
+    }
+    else {
+    fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&q=painting")
+    .then (res => res.json())
+    .then (work => highlightIteration(work.objectIDs))
+    
+    
+    function highlightIteration(highlights){
+        let randomNumber = Math.floor(Math.random() * highlights.length);
+        let randomWork = highlights[randomNumber]  
+                
+        fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${randomWork}`)
+        .then (res => res.json())
+        .then (work => lengthImage(work))
+        }
+    }
+  }
+  
 
 function artWork(work){
 

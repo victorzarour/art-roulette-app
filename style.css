@@ -46,13 +46,24 @@ nav ul li a{
 
 .col{
 	flex-basis: 50%;
+	text-align: center;
+}
+
+#col1{
+	margin-left: 60px;
+}
+
+#col2{
+	margin-right: 60px;
 }
 
 h1{
 	color: #fff;
 	font-size: 85px;
 	margin-bottom: 30px;
-	margin-left: 138px;
+	margin-left: auto;
+	margin-right: auto;
+	position: static;
 }
 
 p{
@@ -60,7 +71,7 @@ p{
 	font-size: 17px;
 	line-height: 32px;
 	text-align: center;
-	margin-left: 115px;
+
 }
 
 button{
@@ -73,8 +84,8 @@ button{
 	border-radius: 20px;
 	outline: none;
 	margin-top: 35px;
-	margin-right: 0px;
-	margin-left: 245px;
+	margin-right: auto;
+	margin-left: auto;
 	cursor: pointer;
 }
 
@@ -90,7 +101,8 @@ button{
 	padding: 15px 25px;
 	box-sizing: border-box;
 	cursor: pointer;
-	margin-left: 100px;
+	margin-left: auto;
+	margin-right: auto;
 	background-image: url(images/socrates.jpg);
 	background-position: center;
 	background-size: cover;
@@ -104,10 +116,8 @@ button{
 	}
 	h1{
 		font-size: 110px;
-		margin-left: 250px;
 	}
 	button{
-		margin-left: 383px;
 		width: 230px;
 		padding: 13px;
 		font-size: 20px;
@@ -115,7 +125,6 @@ button{
 	}
 	p{
 		font-size: 25px;
-		margin-right: 0;
 		line-height: 40px;
 	}
 	.navbar a{
