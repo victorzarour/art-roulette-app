@@ -49,11 +49,10 @@ function artWork(work){
     const workBasics = document.createElement ("h2")
     const workArtist = document.createElement ("h3")
     const workType = document.createElement ("p")
-   
-    const workAcquired = document.createElement("p") 
+    
     const workCulture = document.createElement("p")
     const workPeriod = document.createElement("p")
-    const workURL = document.createElement("p")
+    const workLearnMore = document.createElement("p")
 
     image.className = "work-image"
     workDiv.className = "workDiv"
@@ -62,7 +61,7 @@ function artWork(work){
     workType.className = "workInfo"
     workCulture.className = "workInfo"
     workPeriod.className = "workInfo"
-    workURL.className = "workInfo"
+    workLearnMore.className = "workInfo"
 
     image.src = work.primaryImageSmall
     workBasics.innerText = `${work.title}, (${work.objectDate})`
@@ -70,10 +69,10 @@ function artWork(work){
     workType.innerText = `Medium: ${work.medium} / Dimensions: ${work.dimensions}`
     workCulture.innerText = work.culture.length > 5 ? `Culture: ${work.culture}` : 'Culture: Not Listed'
     workPeriod.innerText = work.period.length > 5 ? `Period: ${work.period}` : 'Period: Not Listed'
-    workURL.innerText = `Learn more: ${work.objectURL}`
-    
+    workLearnMore.innerHTML = `Learn more about this work <a href=${work.objectURL}>here<a>`
+
     pageDiv.append(workDiv)
-    workDiv.append(image, workBasics, workArtist, workType, workCulture, workPeriod, workURL)
+    workDiv.append(image, workBasics, workArtist, workType, workCulture, workPeriod, workLearnMore)
 }
 
 card.addEventListener("click", e => {
@@ -135,8 +134,7 @@ searchButton.addEventListener("click", e => {
       function appendWorks(urlList){
         urlList.forEach(url => {
             const urlParagraph = document.createElement("p")
-            urlParagraph.innerText = url
-
+            urlParagraph.innerHTML = `<a href=${url}>${url}<a>`
 
             searchDiv.append(urlParagraph)
         })
