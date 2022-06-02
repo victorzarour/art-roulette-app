@@ -99,8 +99,8 @@ button{
 }
 
 .card{
-	width: 800px;
-	height: 600px;
+	width: 700px;
+	height: 500px;
 	display: inline-block;
 	border-radius: 10px;
 	padding: 15px 25px;
@@ -213,12 +213,11 @@ input[type=text] {
 .searchDiv{
 	background-color: #000;
 	color: #fff;
-	width: 50%;
+	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	align-items: center;
 	text-align: center;
-	line-height: 25px;
 	padding: 30px;
 	border-radius: 20px;
 }
@@ -227,7 +226,11 @@ input[type=text] {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	line-height: 50px;
+	line-height: 55px;
+}
+
+#searchMessage{
+	line-height: 40px;
 }
 
 .searchDiv a{

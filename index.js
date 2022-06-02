@@ -96,6 +96,7 @@ searchButton.addEventListener("click", e => {
 
     searchMessage.innerText = "If you have an artist, work, or theme in mind and would like to search the MET Collection for it, you can do so in the search bar below! Your search will return the first ten results."
 
+    searchMessage.id = "searchMessage"
     searchDiv.className = "searchDiv"
     searchInput.setAttribute("type", "text")
     searchInput.setAttribute("placeholder", "Search...")
@@ -121,22 +122,22 @@ searchButton.addEventListener("click", e => {
         searchlistSpliced.forEach(searchquery => {
           fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${searchquery}`)
           .then (res => res.json())
-          .then (object => turnURLIntoArray(object.objectURL)) 
+          .then (object => turnURLIntoArray(object)) 
         }) 
       }
 
-      function turnURLIntoArray(URLs){
-          const urlArray = []
-          urlArray.push(URLs)
-          appendWorks(urlArray)
+      function turnURLIntoArray(works){
+          const workArray = []
+          workArray.push(works)
+          appendWorks(workArray)
       }
 
-      function appendWorks(urlList){
-        urlList.forEach(url => {
-            const urlParagraph = document.createElement("p")
-            urlParagraph.innerHTML = `<a href=${url}>${url}<a>`
+      function appendWorks(workList){
+        workList.forEach(work => {
+            const workParagraph = document.createElement("p")
+            workParagraph.innerHTML = `<a href=${work.objectURL}>${work.title}, by ${work.artistDisplayName}<a>`
 
-            searchDiv.append(urlParagraph)
+            searchDiv.append(workParagraph)
         })
       }
 })
