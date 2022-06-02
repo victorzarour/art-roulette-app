@@ -147,7 +147,7 @@ h5{
 }
 
 .work-image {
-	margin: 40px;
+	margin: 60px;
 	float: left;
 	position: relative;
 
@@ -157,20 +157,30 @@ h5{
 	background-color: #000;
 	color: #fff;
 	position: absolute;
-	width: 100%;
+	width: 80%;
+	font-size: 20px;
+	left:0;
+	right:0;
+	margin-top: 30px;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius: 20px;
+	padding-right: 100px;
 }
 
 .workBasics{
 	margin-top: 60px;
 	margin-bottom: 20px;
 	margin-right: 20px;
+	text-align: center;
 }
 
 .workInfo{
 	margin-top: 30px;
 	margin-bottom: 30px;
 	text-align: left;
-	line-height: 25px;
+	line-height: 35px;
+	font-size: 25px;
 }
 
 input[type=text] {
@@ -198,7 +208,7 @@ input[type=text] {
 	text-align: center;
 	line-height: 20px;
 	padding: 30px;
-	
+	border-radius: 20px;
 }
 
 .searchDiv p{
@@ -211,9 +221,17 @@ input[type=text] {
 	width: 130px;
 	-webkit-transition: width 0.4s ease-in-out;
 	transition: width 0.4s ease-in-out;
-	margin: 20px auto
+	margin: 20px auto;
+	border-radius: 5px 0 0 5px;
+	padding: 9px;
 }
   
 input[type=text]:focus {
 width: 40%;
 }
+
+input[type=submit]{
+	border-radius: 0 5px 5px 0;
+	padding: 9px;
+}
+

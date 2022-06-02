@@ -48,37 +48,32 @@ function artWork(work){
     const image = document.createElement("img")
     const workBasics = document.createElement ("h2")
     const workArtist = document.createElement ("h3")
-    const workType = document.createElement ("h4")
+    const workType = document.createElement ("p")
    
     const workAcquired = document.createElement("p") 
     const workCulture = document.createElement("p")
     const workPeriod = document.createElement("p")
     const workURL = document.createElement("p")
-    const seeMore = document.createElement("p")
 
     image.className = "work-image"
     workDiv.className = "workDiv"
     workBasics.className = "workBasics"
     workArtist.className = "workInfo"
     workType.className = "workInfo"
-    workAcquired.className = "workInfo"
     workCulture.className = "workInfo"
     workPeriod.className = "workInfo"
     workURL.className = "workInfo"
-    seeMore.className = "workInfo"
 
     image.src = work.primaryImageSmall
     workBasics.innerText = `${work.title}, (${work.objectDate})`
-    workArtist.innerText = `${work.artistDisplayName} (${work.artistDisplayBio})`
+    workArtist.innerText = work.artistDisplayName > 5 ? `${work.artistDisplayName} (${work.artistDisplayBio})` : 'Artist Not Listed' 
     workType.innerText = `Medium: ${work.medium} / Dimensions: ${work.dimensions}`
-    workAcquired.innerText = `Acquired in: ${work.accessionYear}`
-    workCulture.innerText = `Culture: ${work.culture}`
-    workPeriod.innerText = `Period: ${work.period}`
+    workCulture.innerText = work.culture.length > 5 ? `Culture: ${work.culture}` : 'Culture: Not Listed'
+    workPeriod.innerText = work.period.length > 5 ? `Period: ${work.period}` : 'Period: Not Listed'
     workURL.innerText = `Learn more: ${work.objectURL}`
-    seeMore.innerText = "Like what you see? Click on the search button on the Home page and search for the artist's name to discover their work!"
     
     pageDiv.append(workDiv)
-    workDiv.append(image, workBasics, workArtist, workType, workAcquired, workCulture, workPeriod, workURL, seeMore)
+    workDiv.append(image, workBasics, workArtist, workType, workCulture, workPeriod, workURL)
 }
 
 card.addEventListener("click", e => {
@@ -100,7 +95,7 @@ searchButton.addEventListener("click", e => {
     const searchInput = document.createElement("input")
     const submitButton = document.createElement("input")
 
-    searchMessage.innerText = "If you already have something in mind and would like to search the MET Collection for it, you can also do so in the search bar below!"
+    searchMessage.innerText = "If you have an artist, work, or theme in mind and would like to search the MET Collection for it, you can do so in the search bar below! Your search will return the first ten results."
 
     searchDiv.className = "searchDiv"
     searchInput.setAttribute("type", "text")
@@ -147,3 +142,8 @@ searchButton.addEventListener("click", e => {
         })
       }
 })
+
+const btnAbout = document.querySelector('#btn-about');
+btnAbout.addEventListener("click", e => {
+    alert(`This project was created by students in the Flatiron Software Engineering Bootcamp. If you like it and would like to spread the beauty in your community, please share this page with your friends!`); 
+});
