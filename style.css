@@ -98,6 +98,22 @@ button{
 	margin-left: 50px;
 }
 
+#button-1:hover{
+    box-shadow: inset 230px 0 0 0 #d3d3d3;
+}
+
+#button-2:hover{
+    box-shadow: inset 230px 0 0 0 #d3d3d3;
+}
+
+#button-1:active{
+	transform: translateY(4px);
+}
+
+#button-2:active{
+	transform: translateY(4px);
+}
+
 .card{
 	width: 700px;
 	height: 500px;
@@ -128,7 +144,7 @@ button{
 		font-size: 28px;
 		margin-top: 60px;
 	}
-	p{git
+	p{
 		font-size: 35px;
 		line-height: 60px;
 	}

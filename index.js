@@ -142,7 +142,7 @@ searchButton.addEventListener("click", e => {
       }
 })
 
-const btnAbout = document.querySelector('#btn-about');
+const btnAbout = document.querySelector('#button-1');
 btnAbout.addEventListener("click", e => {
     alert(`This project was created by students in the Flatiron Software Engineering Bootcamp. If you like it and would like to spread the beauty in your community, please share this page with your friends!`); 
 });
