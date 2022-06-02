@@ -28,7 +28,7 @@ nav{
 nav ul li a, nav ul li i{
 	text-decoration: none;
 	color: #fff;
-	font-size: 13px;
+	font-size: 20px;
 	display: none;
 	margin-right: 10px;
 	font-weight: bold;
@@ -59,7 +59,7 @@ nav ul li a{
 
 h1{
 	color: #fff;
-	font-size: 85px;
+	font-size: 110px;
 	margin-bottom: 30px;
 	margin-left: auto;
 	margin-right: auto;
@@ -68,22 +68,22 @@ h1{
 
 p{
 	color: #fff;
-	font-size: 17px;
-	line-height: 32px;
+	font-size: 25px;
+	line-height: 40px;
 	text-align: center;
 
 }
 
 button{
-	width: 180px;
+	width: 230px;
 	color: #000;
-	font-size: 15px;
+	font-size: 20px;
 	padding: 15px 5px;
 	background: #fff;
 	border: 0;
 	border-radius: 20px;
 	outline: none;
-	margin-top: 35px;
+	margin-top: 60px;
 	margin-right: auto;
 	margin-left: auto;
 	cursor: pointer;
@@ -94,8 +94,8 @@ button{
 }
 
 .card{
-	width: 550px;
-	height: 410px;
+	width: 800px;
+	height: 600px;
 	display: inline-block;
 	border-radius: 10px;
 	padding: 15px 25px;
@@ -109,26 +109,26 @@ button{
 	transition: transform 0.5s;
 }
 
-@media screen and (min-width: 1700px){
+@media screen and (min-width: 2300px) {
 	.card{
-		width: 800px;
-		height: 600px;
+		width: 1000px;
+		height: 750px;
 	}
 	h1{
-		font-size: 110px;
+		font-size: 150px;
 	}
 	button{
-		width: 230px;
-		padding: 13px;
-		font-size: 20px;
+		width: 300px;
+		padding: 20px 8px;
+		font-size: 28px;
 		margin-top: 60px;
 	}
 	p{
-		font-size: 25px;
-		line-height: 40px;
+		font-size: 35px;
+		line-height: 60px;
 	}
 	.navbar a{
-		font-size: 20px;
+		font-size: 30px;
 	}
 }
 
