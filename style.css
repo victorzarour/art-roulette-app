@@ -7,7 +7,7 @@
 .container{
 	width: 100%;
 	height: 100vh;
-	background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)), url(images/background.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)), url(images/lagos2\ \(1\).jpg);
 	background-position: center;
 	background-size: cover;
 	box-sizing: border-box;
@@ -80,11 +80,11 @@ p{
 }
 
 button{
-	width: 230px;
+	width: 130px;
 	color: #000;
 	font-size: 20px;
 	padding: 15px 5px;
-	background: #fff;
+	background: rgb(233, 130, 47);
 	border: 0;
 	border-radius: 20px;
 	outline: none;
@@ -92,6 +92,7 @@ button{
 	margin-right: auto;
 	margin-left: auto;
 	cursor: pointer;
+
 }
 
 .buttontwo{
@@ -99,7 +100,7 @@ button{
 }
 
 .card{
-	width: 700px;
+	width: 250px;
 	height: 500px;
 	display: inline-block;
 	border-radius: 10px;
@@ -108,7 +109,7 @@ button{
 	cursor: pointer;
 	margin-left: auto;
 	margin-right: auto;
-	background-image: url(images/socrates.jpg);
+	background-image: url(images/sculpture.jpg);
 	background-position: center;
 	background-size: cover;
 	transition: transform 0.5s;
@@ -128,7 +129,7 @@ button{
 		font-size: 28px;
 		margin-top: 60px;
 	}
-	p{git
+	p{
 		font-size: 35px;
 		line-height: 60px;
 	}

@@ -94,7 +94,8 @@ searchButton.addEventListener("click", e => {
     const searchInput = document.createElement("input")
     const submitButton = document.createElement("input")
 
-    searchMessage.innerText = "If you have an artist, work, or theme in mind and would like to search the MET Collection for it, you can do so in the search bar below! Your search will return the first ten results."
+    searchMessage.innerText = "Looking to find any artists, their work, or theme from all over the world? Click the search bar below and your search will return the first ten results."
+    
 
     searchMessage.id = "searchMessage"
     searchDiv.className = "searchDiv"
@@ -144,5 +145,5 @@ searchButton.addEventListener("click", e => {
 
 const btnAbout = document.querySelector('#btn-about');
 btnAbout.addEventListener("click", e => {
-    alert(`This project was created by students in the Flatiron Software Engineering Bootcamp. If you like it and would like to spread the beauty in your community, please share this page with your friends!`); 
+    alert(`This project was created to represent the love for art from all over the world. The Nigerian-Yoruba culture is important to me just like art. I hope you find inspiration here in Ile Aworan.`); 
 });
