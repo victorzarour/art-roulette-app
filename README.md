@@ -5,7 +5,7 @@
 
 Art Roulette allows users to browse the MET Museum’s vast art collection through one simple click.
 
-The app is currently deployed here: https://6308ebdf449a36006f006daf--storied-liger-5506d3.netlify.app/index.html
+The app is currently deployed here: https://art-roulette.netlify.app/
 
 You can also find a demo here: https://www.linkedin.com/feed/update/urn:li:activity:6950124217724022784/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A6950124217724022784%29
 
